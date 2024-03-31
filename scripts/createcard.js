@@ -1,14 +1,16 @@
-let preview = document.getElementById("preview")
-
-preview.addEventListener("click", () => {
-    document.querySelector(".title-text").textContent = document.getElementById("title").value
-    document.querySelector(".subtitle-text").textContent = document.getElementById("subtitle").value
-    document.querySelector(".to-text").textContent = document.getElementById("to").value
-    document.querySelector(".message-text").textContent = document.getElementById("message").value
-    document.querySelector(".from-text").textContent = document.getElementById("from").value
-})
-
-document.getElementById("save-btn").addEventListener("click", function(event) {
+document.getElementById("preview-btn").addEventListener("click", function(event) {
+    var toValue = document.getElementById("to").value;
+    var fromValue = document.getElementById("from").value;
+    var titleValue = document.getElementById("title").value;
+    var subtitleValue = document.getElementById("subtitle").value;
+    var messageValue = document.getElementById("message").value;
+    document.querySelector(".to-text").textContent = toValue;
+    document.querySelector(".from-text").textContent = fromValue;
+    document.querySelector(".title-text").textContent = titleValue;
+    document.querySelector(".subtitle-text").textContent = subtitleValue;
+    document.querySelector(".message-text").textContent = messageValue;
+    });
+    document.getElementById("save-btn").addEventListener("click", function(event) {
     // event.preventDefault();
     var cards = localStorage.getItem("cards");
     if (cards === null) {
